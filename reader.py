@@ -5,20 +5,18 @@ import random
 import numpy as np
 
 import torch
-from transformers import BertTokenizer
+# from transformers import BertTokenizer
 
 import ontology
 
 
-class Reader:
-    def __init__(self, db, config):
+class Dataset(torch.utils.data.Dataset):
+    def __init__(self, BertTokenizer,  type, db):
         with open(os.path.join(config.assets_path, "never_split.txt"), "r") as f:
             never_split = f.read().split("\n")
         self.tokenizer = BertTokenizer(os.path.join(config.assets_path, "vocab.txt"), never_split=never_split)
         self.db = db
-        self.train = {}
-        self.dev = {}
-        self.test = {}
+        self.encoded = {}
         self.data_path = config.data_path
         self.batch_size = config.batch_size
         self.max_value_len = config.max_value_len
@@ -27,9 +25,29 @@ class Reader:
         self.max_context_len = config.max_context_len
         self.eos_idx = config.eos_idx
         self.pad_idx = config.pad_idx
-    
-    
+        self.type
         
+    def _encodin_all(self, data):
+        processed = {}
+        for dial_id, dial in data.items():
+            turns = len(dial["log"])  # number of turns
+            if not self.train.get(turns):
+                processed[turns] = {}
+            processed[turns][dial_id] = []
+            # 모든것을 인코딩해서 넣는다.
+            for turn_dial in dial["log"]:
+                usr = turn_dial["user"]
+                sys = turn_dial["response"]
+                turn_dial["user"] = self.tokenizer.encode(turn_dial["user"])
+                turn_dial["response"] = self.tokenizer.encode(turn_dial["response"])
+                turn_dial["response_delex"] = self.tokenizer.encode(turn_dial["response_delex"])
+                turn_dial["belief"], turn_dial["db_results"] = self._encode_belief(turn_dial["belief"])
+                turn_dial["action"] = self.encode_action(turn_dial["action"])
+                turn_dial["usr"] = usr
+                processed[turns][dial_id].append(turn_dial)
+                
+        return processed
+                
     def load_data(self, mode="train"):
         """Load train/dev/test data.
         Divide data by number of turns for batch.
@@ -38,58 +56,15 @@ class Reader:
         if mode == "train":
             train_data = json.load(open(os.path.join(self.data_path, "train_data.json"), "r"))
             dev_data = json.load(open(os.path.join(self.data_path, "dev_data.json"), "r"))
-            for dial_id, dial in train_data.items():
-                turns = len(dial["log"])  # number of turns
-                if not self.train.get(turns):
-                    self.train[turns] = {}
-                self.train[turns][dial_id] = []
-                # 모든것을 인코딩해서 넣는다.
-                for turn_dial in dial["log"]:
-                    usr = turn_dial["user"]
-                    sys = turn_dial["response"]
-                    turn_dial["user"] = self.tokenizer.encode(turn_dial["user"])
-                    turn_dial["response"] = self.tokenizer.encode(turn_dial["response"])
-                    turn_dial["response_delex"] = self.tokenizer.encode(turn_dial["response_delex"])
-                    turn_dial["belief"], turn_dial["db_results"] = self.encode_belief(turn_dial["belief"])
-                    turn_dial["action"] = self.encode_action(turn_dial["action"])
-                    turn_dial["usr"] = usr
-                    self.train[turns][dial_id].append(turn_dial)
-                    
-            for dial_id, dial in dev_data.items():
-                turns = len(dial["log"]) 
-                if not self.dev.get(turns):
-                    self.dev[turns] = {}
-                self.dev[turns][dial_id] = []
-                for turn_dial in dial["log"]:
-                    usr = turn_dial["user"]
-                    sys = turn_dial["response"]
-                    turn_dial["user"] = self.tokenizer.encode(turn_dial["user"])
-                    turn_dial["response"] = self.tokenizer.encode(turn_dial["response"])
-                    turn_dial["response_delex"] = self.tokenizer.encode(turn_dial["response_delex"])
-                    turn_dial["belief"], turn_dial["db_results"] = self.encode_belief(turn_dial["belief"])
-                    turn_dial["action"] = self.encode_action(turn_dial["action"])
-                    turn_dial["usr"] = usr
-                    self.dev[turns][dial_id].append(turn_dial)
-        
+            self.train = self._encodin_all(self, train_data)
+            self.dev = self._encodin_all(self, dev_data)
+
         else: # when the mode is test
             test_data = json.load(open(os.path.join(self.data_path, "test_data.json"), "r"))
-            for dial_id, dial in test_data.items():
-                turns = len(dial["log"]) 
-                if not self.test.get(turns):
-                    self.test[turns] = {}
-                self.test[turns][dial_id] = []
-                for turn_dial in dial["log"]:
-                    usr = turn_dial["user"]
-                    sys = turn_dial["response"]
-                    turn_dial["user"] = self.tokenizer.encode(turn_dial["user"])
-                    turn_dial["response"] = self.tokenizer.encode(turn_dial["response"])
-                    turn_dial["response_delex"] = self.tokenizer.encode(turn_dial["response_delex"])
-                    turn_dial["belief"], turn_dial["db_results"] = self.encode_belief(turn_dial["belief"])
-                    turn_dial["action"] = self.encode_action(turn_dial["action"])
-                    turn_dial["usr"] = usr
-                    self.test[turns][dial_id].append(turn_dial)
+            self.test = self._encodin_all(self, test_data)
 
-    def encode_belief(self, belief):
+
+    def _encode_belief(self, belief):
         """Encode belief and DB results.
         
         Outputs: encoded_belief, db_result

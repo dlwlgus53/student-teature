@@ -309,3 +309,245 @@ important_actions = [
     "[train]-[offerbooked]-id",
     "[train]-[offerbook]-id"
 ]
+
+
+QA = {
+    "hotel-pricerange": {
+        "description": "what is the price budget of the hotel?",
+        "values": [
+            "cheap",
+            "moderate",
+            "expensive",
+            "dontcare",
+            "not mentioned"
+        ]
+    },
+    "hotel-type": {
+        "description": "what type is the hotel?",
+        "values": [
+            "hotel",
+            "guesthouse",
+            "dontcare",
+            "not mentioned"
+        ]
+    },
+    "hotel-parking": {
+        "description": "Does the hotel have a parking lot?",
+        "values": [
+            "yes",
+            "no",
+            "free",
+            "dontcare",
+            "not mentioned"
+        ]
+    },
+    "hotel-stay": {
+        "description": "How long did user book the hotel?"
+    },
+    "hotel-day": {
+        "description": "When did user reserve a hotel?",
+        "values": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday",
+            "dontcare",
+            "not mentioned"
+        ]
+    },
+    "hotel-people": {
+        "description": "what is the number of people for the hotel booking?"
+    },
+    "hotel-area": {
+        "description": "what is the area or place of the hotel?"
+    },
+    "hotel-stars": {
+        "description": "what is the star rating of the hotel?",
+        "values": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "dontcare",
+            "not mentioned"
+        ]
+    },
+    "hotel-internet": {
+        "description": "Does the user want a hotel with internet access?",
+        "values": [
+            "yes",
+            "no",
+            "dontcare",
+            "not mentioned"
+        ]
+    },
+    "train-destination": {
+        "description": "where is destination of the train?"
+    },
+    "train-day": {
+        "description": "what is day of the train?",
+        "values": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday",
+            "dontcare",
+            "not mentioned"
+        ]
+    },
+    "train-departure": {
+        "description": "where is the departure location of train?"
+    },
+    "train-arrive": {
+        "description": "When does the train arrive?"
+    },
+    "train-people": {
+        "description": "what is the number of people for the train booking?"
+    },
+    "train-leave": {
+        "description": "what is the leaving time for the train?"
+    },
+    "attraction-area": {
+        "description": "what is the area or place of the attraction?"
+    },
+    "restaurant-food": {
+        "description": "what is the cuisine of the restaurant user is looking for?"
+    },
+    "restaurant-pricerange": {
+        "description": "what is the price budget of the restaurant?",
+        "values": [
+            "expensive",
+            "cheap",
+            "moderate",
+            "dontcare",
+            "not mentioned"
+        ]
+    },
+    "restaurant-area": {
+        "description": "what is the area or place of the restaurant?"
+
+    },
+    "attraction-name": {
+        "description": "what is attraction name?"
+    },
+    "restaurant-name": {
+        "description": "what is restaurant name?"
+    },
+    "attraction-type": {
+        "description": "what type is the attraction?"
+    },
+    "hospital-department": {
+        "description": "what is department of hospital"
+      
+    },
+    "hotel-name": {
+        "description": "what is hotel name?"
+     
+    },
+    "taxi-leave": {
+        "description": "what is the leaving time for the taxi?"
+        
+    },
+    "taxi-destination": {
+        "description": "where is destination of taxi?"
+    },
+    "taxi-departure": {
+        "description": "where is the departure location of taxi?"
+     
+    },
+    "restaurant-time": {
+        "description": "when is the book time of restaurant?"
+    },
+    "restaurant-day": {
+        "description": "when is the book day of restaurant?",
+        "values": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday",
+            "dontcare",
+            "not mentioned"
+        ]
+    },
+    "restaurant-people": {
+        "description": "what is the number of people for the restaurant booking?"
+    },
+    "taxi-arrive": {
+        "description": "When does the taxi arrive?"
+    },
+    "bus-departure": {
+        "description": "where is the departure location of bus?"
+    },
+    "bus-destination": {
+        "description": "where is destination of bus?"
+
+    },
+    "bus-leave": {
+        "description": "when the bus leave?"
+    },
+    "bus-day": {
+        "description": "When did user want use a bus?",
+        "values": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday",
+            "dontcare",
+            "not mentioned"
+        ]
+    },
+    "multichoice-domain" : [
+        "hotel-pricerange",
+        "hotel-type",
+        "hotel-parking",
+        "hotel-day", 
+        "hotel-stars",
+        "hotel-internet",
+        "train-day",
+        "restaurant-pricerange",
+        "restaurant-day"
+    ],
+    "extract-domain" : [
+        "attraction-type",
+        "hotel-people",
+        "hotel-area",
+        "restaurant-area",
+        "hotel-stay",
+        "train-destination",
+        "train-departure",
+        "train-arrive",
+        "train-people",
+        "train-leave",
+        "attraction-area",
+        "restaurant-food",
+        "attraction-name",
+        "restaurant-name",
+        "restaurant-people",
+        "taxi-arrive",
+        "hotel-name",
+        "taxi-leave",
+        "taxi-destination",
+        "taxi-departure",
+        "restaurant-time"
+    ]
+
+}
+
+
+
+
+

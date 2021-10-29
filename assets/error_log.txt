@@ -1,0 +1,66 @@
+Processing data...
+ 18%|███████████████████▊                                                                                        | 1913/10438 [01:26<06:14, 22.74it/s]hotel-day-saturday|tuesday
+hotel-day-saturday|tuesday
+hotel-day-saturday|tuesday
+ 21%|███████████████████████                                                                                     | 2225/10438 [01:40<05:17, 25.86it/s]hotel-pricerange-cheap|moderate
+hotel-pricerange-cheap|moderate
+hotel-pricerange-cheap|moderate
+hotel-pricerange-cheap|moderate
+ 36%|██████████████████████████████████████▌                                                                     | 3728/10438 [02:50<05:40, 19.69it/s]hotel-stars-3|4
+hotel-stars-3|4
+hotel-stars-3|4
+hotel-stars-3|4
+hotel-stars-3|4
+hotel-stars-3|4
+hotel-stars-3|4
+ 40%|███████████████████████████████████████████▏                                                                | 4172/10438 [03:10<04:45, 21.93it/s]hotel-pricerange-moderate|cheap
+ 48%|████████████████████████████████████████████████████                                                        | 5027/10438 [03:50<04:14, 21.23it/s]hotel-day-sunday>monday
+hotel-day-sunday>monday
+hotel-day-sunday>monday
+hotel-day-sunday>monday
+hotel-day-sunday>monday
+hotel-day-sunday>monday
+ 61%|█████████████████████████████████████████████████████████████████▊                                          | 6365/10438 [04:53<03:10, 21.44it/s]hotel-day-monday<thursday
+hotel-day-monday<thursday
+ 62%|██████████████████████████████████████████████████████████████████▊                                         | 6458/10438 [04:57<03:49, 17.31it/s]hotel-pricerange-cheap>moderate
+hotel-pricerange-cheap>moderate
+hotel-pricerange-cheap>moderate
+hotel-pricerange-cheap>moderate
+ 73%|███████████████████████████████████████████████████████████████████████████████▎                            | 7664/10438 [05:53<02:05, 22.17it/s]restaurant-pricerange-moderate|cheap
+ 74%|███████████████████████████████████████████████████████████████████████████████▉                            | 7731/10438 [05:56<01:54, 23.56it/s]hotel-pricerange-cheap|moderate
+hotel-pricerange-cheap|moderate
+hotel-pricerange-cheap|moderate
+ 76%|█████████████████████████████████████████████████████████████████████████████████▋                          | 7899/10438 [06:04<02:15, 18.74it/s]hotel-type-bed and breakfast
+hotel-type-bed and breakfast
+ 79%|█████████████████████████████████████████████████████████████████████████████████████▎                      | 8246/10438 [06:19<01:15, 29.12it/s]hotel-type-hotel|guesthouse
+hotel-type-hotel|guesthouse
+hotel-type-hotel|guesthouse
+hotel-type-hotel|guesthouse
+hotel-type-hotel|guesthouse
+ 81%|███████████████████████████████████████████████████████████████████████████████████████▏                    | 8432/10438 [06:28<01:38, 20.27it/s]hotel-day-wednesday|friday
+hotel-day-wednesday|friday
+hotel-day-wednesday|friday
+hotel-day-wednesday|friday
+ 85%|███████████████████████████████████████████████████████████████████████████████████████████▍                | 8834/10438 [06:47<01:13, 21.76it/s]hotel-pricerange-$100
+ 88%|███████████████████████████████████████████████████████████████████████████████████████████████▍            | 9221/10438 [07:06<01:07, 18.08it/s]restaurant-day-saturday|thursday
+restaurant-day-saturday|thursday
+restaurant-day-saturday|thursday
+restaurant-day-saturday|thursday
+restaurant-day-saturday|thursday
+restaurant-day-saturday|thursday
+restaurant-day-saturday|thursday
+ 89%|████████████████████████████████████████████████████████████████████████████████████████████████            | 9280/10438 [07:09<00:55, 20.79it/s]hotel-type-hotel|guesthouse
+ 95%|██████████████████████████████████████████████████████████████████████████████████████████████████████▍     | 9899/10438 [07:39<00:25, 20.99it/s]restaurant-day-sunday|thursday
+restaurant-day-sunday|thursday
+ 95%|██████████████████████████████████████████████████████████████████████████████████████████████████████▌     | 9918/10438 [07:40<00:23, 22.30it/s]hotel-stars-4|5
+hotel-stars-4|5
+hotel-stars-4|5
+hotel-stars-4|5
+hotel-stars-4|5
+hotel-stars-4|5
+hotel-stars-4|5
+hotel-stars-4|5
+hotel-stars-4|5
+hotel-stars-4|5
+hotel-stars-4|5
+hotel-stars-4|5

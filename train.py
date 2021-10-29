@@ -53,7 +53,7 @@ def init_process(config):
 
     lr = config.lr
 
-    model = DORA(db, config).cuda()
+    model = DORA(db, config).cuda() # 이걸 또 바꿔줘야함..
     optimizer = Adam(model.parameters(), lr=lr)
 
     global_epoch = 0
