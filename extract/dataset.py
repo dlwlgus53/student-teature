@@ -10,13 +10,19 @@ import ontology
 # here, squad means squad2
 
 class Dataset(torch.utils.data.Dataset):
-    def __init__(self, data_path, type, tokenizer):
+    def __init__(self, data_path, type, tokenizer, debug=True):
         self.tokenizer = tokenizer
+        self.encodings = []
+        self.error_list = {}
 
         try:
-            print("Load processed data")
-            with open(f'data/preprocessed_{type}.pickle', 'rb') as f:
-                encodings = pickle.load(f)
+            if debug:
+                0/0
+            else :    
+                print("Load processed data")
+                with open(f'data/preprocessed_{type}.pickle', 'rb') as f:
+                    encodings = pickle.load(f)
+                    self.encodings = encodings
         except:
             print("preprocessing data...")
             raw_dataset = json.load(open(data_path, "r"))
@@ -32,6 +38,9 @@ class Dataset(torch.utils.data.Dataset):
                 pickle.dump(encodings, f, pickle.HIGHEST_PROTOCOL)
 
         self.encodings = encodings
+        with open('./error.json','w') as f:
+            json.dump(self.error_list,f, indent=4)
+        
 
 
 
@@ -47,24 +56,33 @@ class Dataset(torch.utils.data.Dataset):
         question = []
         answer = {'answer_start' : [], 'answer_end' : []}
         print(f"preprocessing data")
-        pdb.set_trace()
-        
-        for key in dataset.keys():
-            dialogue = dataset[key]['log']
+        for id in dataset.keys():
+            dialogue = dataset[id]['log']
             dialouge_text = ""
             for turn in dialogue:
                 dialouge_text += turn['user']
-                c = dialouge_text[-128:] # get from tail. TODO for 128
-                for key in turn['belief']:
-                    if key in ontology.QA['extract-domain']:
-                        q = ontology.QA[key]['description']
-                        a = turn['belief'][key]
-                        
-                        context.append(c)
-                        question.append(q)
-                        answer['answer_start'].append(c.find(a)) # 여기서 아마 문제가 생길걸??
-                        answer['answer_end'].append(c.find(a) + len(a))                
+                for key in ontology.QA['extract-domain']:
+                    q = ontology.QA[key]['description']
+                    c = dialouge_text
+                    
+                    if len(c+q)+3 > self.tokenizer.model_max_length:
+                        c = c[-(self.tokenizer.model_max_length-100):] # TODO
+                        q = q[:100]
 
+                    if key in turn['belief']: # 언급을 한 경우
+                        a = turn['belief'][key]
+                        if c.find(a) == -1:
+                            self.error_list[id] = { 'context' : c, 'question' : q, 'answer' : a}
+                        else:
+                            answer['answer_start'].append(c.find(a)) # 여기서 아마 문제가 생길걸??. 여기는 해결해야 할 부분!! 
+                            answer['answer_end'].append(c.find(a) + len(a))
+                            context.append(c)
+                            question.append(q)                
+                    else:
+                        answer['answer_start'].append(-1) # 여기서 아마 문제가 생길걸??. 여기는 해결해야 할 부분!! 
+                        answer['answer_end'].append(-1)     
+                        context.append(c)
+                        question.append(q) 
                 
                 dialouge_text += turn['response']
         
@@ -100,25 +118,31 @@ class Dataset(torch.utils.data.Dataset):
                 end_positions.append(None)
             
             if start_positions[-1] is None:
-                start_positions[-1] = self.tokenizer.model_max_length
+                # start_positions[-1] = self.tokenizer.model_max_length
+                start_positions[-1] = 0
+                
             if end_positions[-1] is None:
-                end_positions[-1] = self.tokenizer.model_max_length
+                # end_positions[-1] = self.tokenizer.model_max_length
+                end_positions[-1] = 0
+                
+        encodings.update({'start_positions': start_positions, 'end_positions': end_positions})
+        return encodings
 
-        return encodings.update({'start_positions': start_positions, 'end_positions': end_positions})
         
 
 if __name__ == '__main__':
-    data_path = '../../data/MultiWOZ_2.1/dev_data.json'
+    data_path = '../data/MultiWOZ_2.1/dev_data.json'
     tokenizer = AutoTokenizer.from_pretrained('bert-base-uncased', use_fast=True)
     type = 'dev'
-    dd = Dataset(data_path, type, tokenizer,)
+    dd = Dataset(data_path, type, tokenizer,512, True)
     pdb.set_trace()
     for i in range(10):
         print(tokenizer.convert_tokens_to_string(tokenizer.convert_ids_to_tokens(dd[i]['input_ids'])))
-        try:
-            print(tokenizer.convert_ids_to_tokens(dd[i]['input_ids'])[dd[i]['start_positions']:dd[i]['end_positions']+1][0])
-        except:
-            print(tokenizer.convert_ids_to_tokens(dd[i]['input_ids'])[dd[i]['start_positions']:dd[i]['end_positions']][0])
+
+        # try:
+        #     print(tokenizer.convert_ids_to_tokens(dd[i]['input_ids'])[dd[i]['start_positions']:dd[i]['end_positions']+1][0])
+        # except:
+        #     print(tokenizer.convert_ids_to_tokens(dd[i]['input_ids'])[dd[i]['start_positions']:dd[i]['end_positions']][0])
             
         
 

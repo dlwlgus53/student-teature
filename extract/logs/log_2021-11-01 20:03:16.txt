@@ -1,0 +1,1 @@
+Namespace(patience=3, batch_size=8, max_epoch=2, base_trained_model='bert-base-uncased', pretrained_model=None, gpu_number=0, debugging=False, log_file='logs/log_2021-11-01 20:03:16.txt', dev_path='../data/MultiWOZ_2.1/dev_data.json', train_path='../data/MultiWOZ_2.1/train_data.json', do_train=True)

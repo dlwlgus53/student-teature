@@ -1,0 +1,368 @@
+Namespace(patience=3, batch_size=8, max_epoch=2, base_trained_model='bert-base-uncased', pretrained_model=None, gpu_number=0, debugging=False, log_file='logs/log_2021-11-01 20:13:51.txt', dev_path='../data/MultiWOZ_2.1/dev_data.json', train_path='../data/MultiWOZ_2.1/train_data.json', do_train=True)
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : did you want me to book the train for you? no i will take care of the train booking. i still need help finding an expensive 4 star hotel with free parking. i would prefer a guesthouse type. i don't have any listings for expensive guesthouses. there are several 4 star that
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : kings lynn
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 18 : 30
+ pred_text : 
+ans text : 
+ pred_text : . actually, i am looking for an expensive restaurant in the west area. there are nine expensive restaurants in the west. is there a type of cuisine you would like to try? how about indian food? anything good in the west for that? there are five indian restaurants that meet your criteria. may i suggest tandoori palace at 68 histon
+ans text : 
+ pred_text : also give you train information for
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : post code and entrance fee information. i am also looking for a train from stansted airport that leaves after 16
+ans text : 
+ pred_text : number is d3l643yz. thanks. i also need a guesthouse to stay in in the north. how about the acorn guest house? does
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : number, address and postcode for riverside? sure! the phone number is 01223259
+ans text : 
+ pred_text : saturday. the tr7413 train leaves at 08 : 06 and arrives by 08 : 56
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : british
+ pred_text : address or to make a reservation? yes, please. for 15
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : postcode and phone number, please? the postcode is cb21rs, and the phone number is 01223359
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : centre
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : tuesday. tr19
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : and i need a reference number please. ok, you are booked into the gonville hotel,
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : london liverpool street
+ pred_text : also give you train information for
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : indian
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : kettle? the copper kettle is located in the centre of town. i would like to book a cab please. alright. i will need more information
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : and is a hotel please. i have 5 different hotels that
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 13 : 00
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : be hungry so could you help me find an appropriate dining establishment in the north? same price range as
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : you wanting a stay for 8 days or
+ans text : 
+ pred_text : 
+ans text : 2
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : worth house
+ pred_text : time would you like to arrive at the cinema? i want to leave the hotel by 03 : 30. your taxi reservation departing from worth house to vue cinema at 15 : 30 was successful. the booked car type is a white bmw and the contact number is 07453314
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : time, train id, and travel time. here's the information about the train : tr45
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : phone number is 01223259988. perfect. can you help me with a reservation for 6 people at 14
+ans text : 
+ pred_text : breakfast is not available for 5 nights and 5 people on wednesday. would you like a different day or
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : centre
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : post code is cb19hxgreat thank you for all your help. [SEP] what is the leaving time for the train? [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : today? yes! i'm looking for a particular hotel, the name is home from home. that is
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : ##223336233. as far as the train goes, what day and time would you like to travel? i would like to leave on sunday and arrive by 17
+ans text : 
+ pred_text : tesla will be arriving at 21 : 00
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : today? i am also looking for a place to dine called saigon city can you give me some info on it? of course! it is located in the north and is expensive. would you like me to make you a reservation? yes. can you make a reservation for 1 at 20 : 00
+ans text : centre
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : number, please? it's free! the phone number is 01223446100. is there anything else that i can assist you with? i could use some help finding a room somewhere
+ans text : west
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : and unfortunately, i'm not finding any cheap north african restaurants. would you like to look for something different? how about an indian restaurant instead? we have listings for 4 indian restaurants in the cheap price range in the centre and north of town. which area would you prefer? the area doesn't matter much
+ans text : kings lynn
+ pred_text : 
+ans text : british
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : .. yes i have two pizza places to choose from. would you like me to suggest one and make a booking for you? yes, please. for 5 people at 15
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : not ready to book a spot yet. i do need to find a place to eat in the west though. there are 14 restaurants in the west. is there a particular cuisine you are looking for? i would like an indian restaurant. the tandoori palace has indian cuisine. would you like me to book a table? yes i'd love one, please. just me, and i'd like to eat at 10 : 15
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : help with a train. of course, do you know your departure location and time? i weill departing on thursday from cambridge and need to arrive by 10 : 30 in stevenage
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 4
+ pred_text : 
+ans text : architecture
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : post code of that hotel for now? yes. the postcode is cb41
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : west
+ pred_text : 
+ans text : 
+ pred_text : 
+ans text : peterborough
+ pred_text : you know what time you plan to leave? not really. i want to get there by 20 : 45 though. tr4182 leaves peterborough at 18
+ans text : 
+ pred_text : you like to look for another day or time? how about 16
+ans text : 
+ pred_text : there anything else i can help you with? i also need a train leaving cambridge after 17 : 15 going to birmingham new street. there are 42 trains that match your criteria. what day will you be travelling? i would like to travel on monday. we have tr2753 that
+ans text : 
+ pred_text : 
+ans text : 
+ pred_text : 
+Epoch : 0, EM : 0.6963, F1 : 0.6975, Loss : 3.1337
