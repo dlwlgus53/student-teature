@@ -169,7 +169,7 @@ class DataCreator(object):
         return text_
 
 
-    def add_qa_answer(self, domain, slot, answer):
+    def add_qa_answer(self, response, domain, slot, answer):
         try:
             if f'{domain}-{slot}' in ontology.QA['multichoice-domain']:
                 answer_list = ontology.QA[f'{domain}-{slot}']['values']
@@ -269,8 +269,7 @@ class DataCreator(object):
                     if value != "":
                         if slot == "name" and value not in user_history:
                             continue # DORA doesn't use Name value, from system's recommendation but never mentioned by user, as label of belief tracking
-                        belief["{}-{}".format(domain, slot)] = self.add_qa_answer(domain, slot, value)
-                        if self.add_qa_answer(domain, slot, value) == -1: print('wrong')
+                        belief["{}-{}".format(domain, slot)] = self.add_qa_answer(turn_dial["text"], domain, slot, value)
                     
                     
             for slot, value in turn_dial["metadata"][domain]["semi"].items():  # semi
@@ -285,8 +284,7 @@ class DataCreator(object):
                 if value != "":
                     if slot == "name" and value not in user_history:
                         continue
-                    belief["{}-{}".format(domain, slot)] = self.add_qa_answer( domain, slot, value)
-                    if self.add_qa_answer(domain, slot, value) == -1: print('wrong')
+                    belief["{}-{}".format(domain, slot)] = self.add_qa_answer( turn_dial["text"], domain, slot, value)
                     
         return belief, raw_dial
 
@@ -378,13 +376,14 @@ class DataCreator(object):
             dial_id = dial_id.split(".")[0]
             if dial_id in ignore_list: continue
             dialogue = {}
-            dialogue["goal"] = goal            
             dialogue["log"] = []
             raw_dial["offered_entries"] = {"hotel": {}, "restaurant": {}, "attraction": {}, "train": {}} # offered by system
             
             
             goal, dial_domains = self.process_goal(raw_dial["goal"])
             if len(dial_domains) == 0:  continue
+            dialogue["goal"] = goal            
+
 
             turn = {}
             turn_acts = self.acts[dial_id] # TODO
