@@ -21,7 +21,7 @@ def train(model, train_loader, optimizer, device):
 
 
 def valid(model, dev_loader, device, tokenizer, log_file):
-
+    pdb.set_trace()
     model.eval()
     pred_texts = []
     ans_texts = []

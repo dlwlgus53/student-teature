@@ -1,5 +1,8 @@
 save/
 data/
+extract/error.json
+*.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
